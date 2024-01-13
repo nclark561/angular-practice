@@ -1,0 +1,12 @@
+<div class="main">
+    <form [formGroup]="todoForm" class="form" (ngSubmit)="onSubmit($event)">
+        <label for="addTodo">Add Todo:</label>
+        <input formControlName="addTodo" type="text" name="addTodo" />
+        <button type="submit">submit</button>
+    </form>
+    <h2>Todo List:</h2>
+    <div class="item" *ngFor="let todoItem of todoItems; let index = index">
+        <todo-item  [todo]="todoItem"></todo-item>
+        <button (click)="remove(index)">remove</button>
+    </div>
+</div>

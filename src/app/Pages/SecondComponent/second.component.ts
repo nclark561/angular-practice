@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import { CounterComponent } from "../CounterComponent/counter.component";
+import { CounterComponent } from "../../Components/CounterComponent/counter.component";
 
 @Component({
     standalone: true,
