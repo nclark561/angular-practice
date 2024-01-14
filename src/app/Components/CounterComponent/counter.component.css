@@ -7,3 +7,20 @@
 .counter-container > * {
     margin: 1rem;
 }
+
+button {
+    border: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 10px;
+    background: none;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+}
+
+button:hover {
+    cursor: pointer;
+}

@@ -17,6 +17,7 @@ interface Todo {
 export class TodoItemComponent {
     title = 'todo item'
     @Input () todo: Todo = { todoItem: '', todoItems: [], index: undefined } 
+    status: boolean = false
     remove: any
 
     constructor () {

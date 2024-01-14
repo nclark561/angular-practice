@@ -23,9 +23,10 @@ export class TodoListComponent {
         this.onSubmit = (evt: Event) => {
             evt.preventDefault()
             console.log(this.todoForm.value.addTodo)
-            if(typeof this.todoForm.value.addTodo === "string") {
+            if(typeof this.todoForm.value.addTodo === "string" && this.todoForm.value.addTodo !== '') {
                 this.todoItems = [...this.todoItems, this.todoForm.value.addTodo]
             }
+            this.todoForm.reset()
         }
         this.remove = (index: number) => this.todoItems.splice(index, 1)
     }

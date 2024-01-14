@@ -1,4 +1,4 @@
 <div class="item">
-    <p>{{todo.todoItem}}</p>
+    <p (click)="status=!status" [ngClass]="status ? 'line-through' : null">{{todo.todoItem}}</p>
     <button (click)="remove(todo.index)">x</button>
 </div>

@@ -8,3 +8,34 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+input {
+    margin-left: 2px;
+    margin-right: 2px;
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: black;
+}
+
+input:focus {
+    outline: none;
+    background: none;
+}
+
+button {
+    border: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 10px;
+    background: none;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    cursor: pointer;
+}
