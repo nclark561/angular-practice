@@ -1,5 +1,11 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
+
+interface Todo {
+    todoItem: string;
+    todoItems: string[];
+    index: number | undefined;
+}
 
 @Component({
     standalone: true,
@@ -10,5 +16,13 @@ import { Component, Input } from "@angular/core";
 })
 export class TodoItemComponent {
     title = 'todo item'
-    @Input () todo: string = ''
+    @Input () todo: Todo = { todoItem: '', todoItems: [], index: undefined } 
+    remove: any
+
+    constructor () {
+        this.remove = (index: number) => {
+            console.log(index)
+            this.todo.todoItems.splice(index, 1)
+        }
+    }
 }

@@ -5,8 +5,5 @@
         <button type="submit">submit</button>
     </form>
     <h2>Todo List:</h2>
-    <div class="item" *ngFor="let todoItem of todoItems; let index = index">
-        <todo-item  [todo]="todoItem"></todo-item>
-        <button (click)="remove(index)">remove</button>
-    </div>
+    <todo-item *ngFor="let todoItem of todoItems; let index = index" [todo]="{ todoItems, index, todoItem }"></todo-item>
 </div>
