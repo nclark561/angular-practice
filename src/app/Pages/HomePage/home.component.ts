@@ -1,14 +1,35 @@
-import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-    standalone: true,
-    selector: 'home',
-    imports: [ CommonModule, RouterOutlet ],
-    templateUrl: './home.component.html',
-    styleUrl: './home.component.css'
+  standalone: true,
+  selector: 'home',
+  imports: [CommonModule, RouterOutlet],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css',
 })
-export class HomeComponent {
-    title = 'Home Page'
+export class HomeComponent implements OnInit {
+  title = 'Home Page';
+  pokemon: string;
+  getPokemon: any;
+  
+  ngOnInit(): void {
+    this.getPokemon();
+  }
+
+  constructor() {
+    this.pokemon = ''
+    this.getPokemon = async () => {
+      try {
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/infernape`);
+        const url = await res.json()
+        if (typeof url.sprites.front_default === 'string') this.pokemon = url.sprites.front_default;
+        console.log(url)
+        return;
+      } catch (err) {
+        return 'error';
+      }
+    };
+  }
 }
