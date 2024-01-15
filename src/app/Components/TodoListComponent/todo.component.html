@@ -1,6 +1,9 @@
 <div class="main">
     <form [formGroup]="todoForm" class="form" (ngSubmit)="onSubmit($event)">
-        <input formControlName="addTodo" placeholder="Add Todo" type="text" name="addTodo" id="addTodo"/>
+        <div class="user-box">
+            <input formControlName="addTodo" placeholder=" " type="text" name="addTodo" id="addTodo"/>
+            <label for="addTodo">Add Todo</label>
+        </div>
         <button type="submit">+</button>
     </form>
     <h2>Todo List:</h2>

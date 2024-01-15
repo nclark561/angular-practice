@@ -1,41 +1,73 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 input {
-    margin-left: 2px;
-    margin-right: 2px;
-    border: solid;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-color: black;
+  margin-left: 2px;
+  margin-right: 2px;
+  border: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: black;
+  font-size: large;
 }
 
 input:focus {
-    outline: none;
-    background: none;
+  outline: none;
+  background: none;
 }
 
 button {
-    border: solid;
-    border-width: 2px;
-    border-color: black;
-    border-radius: 10px;
-    background: none;
-    font-size: large;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  border: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 10px;
+  background: none;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.user-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-box > label {
+  position: absolute;
+  top: -5px;
+  left: 8px;
+  padding: 10px 0;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.user-box > input:focus ~ label {
+  top: -18px;
+  left: 4px;
+  color: #7c9697;
+  font-size: 11px;
+}
+
+input:not(:placeholder-shown) ~ label {
+  top: -18px;
+  left: 4px;
+  color: #7c9697;
+  font-size: 11px;
 }
