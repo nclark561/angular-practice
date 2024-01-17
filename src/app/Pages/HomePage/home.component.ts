@@ -22,11 +22,12 @@ export class HomeComponent implements OnInit {
     this.pokemon = ''
     this.getPokemon = async () => {
       try {
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/infernape`);
-        const url = await res.json()
-        if (typeof url.sprites.other.home.front_default === 'string') this.pokemon = url.sprites.other.home.front_default;
+        const res = await fetch('/api/pokemon');
+        const data = await res.json()
+        this.pokemon = data.pokemon
         return;
       } catch (err) {
+        console.error(err)
         return 'error';
       }
     };

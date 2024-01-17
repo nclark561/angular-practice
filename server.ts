@@ -18,7 +18,19 @@ export function app(): express.Express {
   server.set('views', browserDistFolder);
 
   // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
+  server.get('/api/pokemon', async (req, res) => {
+    try {
+      const result = await fetch(`https://pokeapi.co/api/v2/pokemon/infernape`);
+      const url = await result.json()
+      let pokemon
+      if (typeof url.sprites.other.home.front_default === 'string') pokemon = url.sprites.other.home.front_default;
+      res.status(200).send({ pokemon })
+      return;
+    } catch (err) {
+      res.sendStatus(500)
+      return 'error';
+    }
+  });
   // Serve static files from /browser
   server.get('*.*', express.static(browserDistFolder, {
     maxAge: '1y'
