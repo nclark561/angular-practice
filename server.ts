@@ -20,7 +20,7 @@ export function app(): express.Express {
   // Example Express Rest API endpoints
   server.get('/api/pokemon', async (req, res) => {
     try {
-      const result = await fetch(`https://pokeapi.co/api/v2/pokemon/infernape`);
+      const result = await fetch(`https://pokeapi.co/api/v2/pokemon/monferno`);
       const url = await result.json()
       let pokemon
       if (typeof url.sprites.other.home.front_default === 'string') pokemon = url.sprites.other.home.front_default;
